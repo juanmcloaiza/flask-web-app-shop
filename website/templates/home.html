@@ -1,0 +1,55 @@
+{% extends "base.html" %} {% block title %}Admin Home{% endblock %} {% block content
+%}
+<h1 align="center">Add products</h1>
+
+<form method="POST" action="" enctype="multipart/form-data">
+
+  <div class="mb-3">
+    <label for="prod-name" class="form-label">Product Name</label>
+    <input name="prod-name" class="form-control" id="prod-name" placeholder="Product Name">
+  </div>
+  <div class="mb-3">
+    <label for="prod-price" class="form-label">Price (MXN)</label>
+    <input name="prod-price" class="form-control" type="number" id="prod-price" placeholder="100">
+  </div>
+  <div class="mb-3">
+    <label for="prod-description" class="form-label">Product Description</label>
+    <textarea name="prod-description" class="form-control" id="prod-description" rows="3"></textarea>
+  </div>
+  <div class="mb-3">
+    <label for="prod-pic" class="form-label">Product Photo</label>
+    <input name="prod-pic" class="form-control" type="file" id="prod-pic">
+  </div>
+
+  <br/>
+  <div align="center">
+    <button type="submit" class="btn btn-primary">Add Product</button>
+  </div>
+
+</form>
+<br/>
+<ul class="list-group list-group-flush" id="products">
+{% for product in user.products %}
+
+<li class="list-group-item d-flex justify-content-between align-items-center">
+<div class="card " style="width: 18rem;">
+  <img src= {{ product.pic_uri }} class="card-img-top" alt="...">
+  <div class="card-body">
+    <h2 class="card-title"> {{product.name}} </h2>
+    <h5 class="card-text"> ${{product.price}}.00 (MXN) </h5>
+    <p class="card-text"> {{ product.description }} </p>
+    <button type="button" class="close" onClick="deleteProduct({{ product.id }})">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+</div>
+</li>
+<br/>
+
+{% endfor %}
+</ul>
+<br/>
+<br/>
+<br/>
+
+{% endblock %}

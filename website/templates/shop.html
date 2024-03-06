@@ -1,0 +1,78 @@
+{% extends "base.html" %} {% block title %}Shop{% endblock %} {% block content
+%}
+<h1 align="center">Shop</h1>
+
+<form method="POST", class="text-center">
+<ul class="list-group list-group-flush" id="products">
+{% for product in products %}
+
+<li class="list-group-item align-items-center">
+<div class="card" style="width: 18rem;">
+  <img src= {{ product.pic_uri }} class="card-img-top" alt="...">
+  <div class="card-body">
+    <h2 class="card-title"> {{product.name}} </h2>
+    <h5 class="card-text"> ${{product.price}}.00 (MXN) </h5>
+    <p class="card-text"> {{ product.description }} </p>
+      <div class="mb-3 row">
+        <div class="col-sm-10">
+        <input name={{product.id}}-quantity type="number" class="form-control" id="prod-order" value="0">
+      </div>
+  </div>
+
+  </div>
+</div>
+</li>
+<br/>
+
+{% endfor %}
+</ul>
+<br/>
+<br/>
+
+  <h3 align="center">Place Order</h3>
+  <div class="form-group">
+    <label for="email">Email Address</label>
+    <input
+      type="email"
+      class="form-control"
+      id="email"
+      name="email"
+      placeholder="name@example.com"
+    />
+  </div>
+  <div class="form-group">
+    <label for="address">Delivery Address</label>
+    <textarea
+      type="text"
+      class="form-control"
+      id="address"
+      name="address"
+      placeholder=
+"Avenida Siempre Viva 123
+Pacoima, California
+USA"
+      rows="3"
+    /></textarea>
+  </div>
+  <div class="form-group">
+    <label for="customerName">Name</label>
+    <input
+      type="text"
+      class="form-control"
+      id="customerName"
+      name="customerName"
+      placeholder="How should we call you? - Juan, Gaby, Dr. Fernández"
+    />
+  </div>
+  <br/>
+  <div clas="text-center">
+  <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+
+</form>
+
+  <br/>
+  <br/>
+  <br/>
+
+{% endblock %}
