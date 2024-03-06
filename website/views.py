@@ -71,8 +71,7 @@ def home():
 
 @views.route('/checkout')
 def checkout(user, address, total):
-    render_template("checkout.html", user=current_user, address=address, total=total)
-
+    return render_template("checkout.html", user=current_user, address=address, total=total)
 
 
 @views.route('/shop', methods=['GET', 'POST'])

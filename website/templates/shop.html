@@ -1,6 +1,30 @@
-{% extends "base.html" %} {% block title %}Shop{% endblock %} {% block content
+{% extends "base.html" %} {% block title %}El Cazo de Oro{% endblock %} {% block content
 %}
-<h1 align="center">Shop</h1>
+<h1 align="center">El Cazo de Oro</h1>
+
+<iframe
+  width="100%"
+  height="500"
+  style="border:0"
+  loading="lazy"
+  allowfullscreen
+  referrerpolicy="no-referrer-when-downgrade"
+  src="https://www.google.com/maps/embed/v1/place?key=API
+&q=El+Cazo+de+Oro,+Observatorio+CDMX"></iframe>
+</iframe>
+
+<!--Google Maps-->
+<iframe
+  width="100%"
+  height="500"
+  style="border:0"
+  loading="lazy"
+  allowfullscreen=""
+  referrerpolicy="no-referrer-when-downgrade"
+  src="https://maps.google.com/maps?q=El+Cazo+de+Oro,+Observatorio+CDMX&t=&z=16&ie=UTF8&iwloc=&output=embed"></iframe>
+</iframe>
+<!--Google Maps-->
+
 
 <form method="POST", class="text-center">
 <ul class="list-group list-group-flush" id="products">
@@ -29,19 +53,19 @@
 <br/>
 <br/>
 
-  <h3 align="center">Place Order</h3>
+  <h3 align="center">Ordena aquí</h3>
   <div class="form-group">
-    <label for="email">Email Address</label>
+    <label for="email">Dirección de correo electrónico</label>
     <input
       type="email"
       class="form-control"
       id="email"
       name="email"
-      placeholder="name@example.com"
+      placeholder="nombre@ejemplo.com"
     />
   </div>
   <div class="form-group">
-    <label for="address">Delivery Address</label>
+    <label for="address">Dirección de entrega</label>
     <textarea
       type="text"
       class="form-control"
@@ -49,8 +73,8 @@
       name="address"
       placeholder=
 "Avenida Siempre Viva 123
-Pacoima, California
-USA"
+ Col. Springfield, CP 45678
+ Ciudad De México"
       rows="3"
     /></textarea>
   </div>
@@ -61,7 +85,7 @@ USA"
       class="form-control"
       id="customerName"
       name="customerName"
-      placeholder="How should we call you? - Juan, Gaby, Dr. Fernández"
+      placeholder="Por quién preguntamos? - Juan, Gaby, Dr. Fernández, El Gordo..."
     />
   </div>
   <br/>
