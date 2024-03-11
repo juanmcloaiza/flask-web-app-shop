@@ -12,12 +12,18 @@ git clone <repo-url>
 pip install -r requirements.txt
 ```
 
-## Running The App
+## Running and viewing the app locally
 
 ```bash
 python main.py
 ```
 
-## Viewing The App
-
 Go to `http://127.0.0.1:5000`
+
+
+## Publishing with ngrok to test
+
+```bash
+ngrok http http://localhost:5000
+python main.py
+```
